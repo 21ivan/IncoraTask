@@ -29,11 +29,11 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('first_name', 'last_name', 'username', 'email', 'phone_number', 'password')
         extra_kwargs = {'password': {'write_only': True}}
 
-    def validate(self, args):
-        email = args.get('email', None)
-        username = args.get('username', None)
-        if User.objects.filter(email=email).exists():
-            raise serializers.ValidationError({'email': 'email already exists'})
-        if User.objects.filter(username=username).exists():
-            raise serializers.ValidationError({'username': 'username already exists'})
-        return super().validate(args)
+    # def validate(self, args):
+    #     email = args.get('email', None)
+    #     username = args.get('username', None)
+    #     if User.objects.filter(email=email).exists():
+    #         raise serializers.ValidationError({'email': 'email already exists'})
+    #     if User.objects.filter(username=username).exists():
+    #         raise serializers.ValidationError({'username': 'username already exists'})
+    #     return super().validate(args)

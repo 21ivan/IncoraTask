@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', RegistrationApiView.as_view(), name='register'),
     path('users/<int:pk>', DetailApiView.as_view(), name='detail'),
-    path('login/', TokenObtainPairView.as_view(), name='login' )
+    path('users/<int:pk>', DetailApiView.as_view(), name='update'),
+    path('login/', TokenObtainPairView.as_view(), name='login')
 ]
